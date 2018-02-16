@@ -1,0 +1,29 @@
+IPv4 Public IP : 54.201.193.154 (<== value could change everytime you STOP and START your instance!)
+
+============= ACCESS THE SYSTEM FIRST TIME ===================
+1. Take the pem and convert to ppk (using puttygen)
+2. Open putty and add username (ec2-54-201-193-154.us-west-2.compute.amazonaws.com) and upload the ppk to login
+3. For user type "ubuntu"
+
+============= CONFIGURE JUPYTER NOTEBOOK SETTINGS ==============
+jupyter notebook --generate-config
+sed -ie "s/#c.NotebookApp.ip = 'localhost'/#c.NotebookApp.ip = '*'/g" ~/.jupyter/jupyter_notebook_config.py
+
+============= TEST THE INSTANCE ================
+git clone https://github.com/udacity/aind2-cnn.git
+cd aind2-cnn
+sudo python3 -m pip install -r requirements/requirements-gpu.txt
+jupyter notebook --ip=0.0.0.0 --no-browser
+
+============= ACCESS THE JUPYTER FROM YOUR LOCAL MACHINE ===========
+Copy/ paste the link that was outputted from previous command & replace 0.0.0.0 to the Public IP address of your's
+
+http://54.201.193.154:8888/?token=6c86eb77ca8db4382dd054fc5b0d68c018a6917349ae1b72
+
+============= TO USE ON A DAY-TO-DAY BASIS ============
+Open putting and login to 'Udacity DL' & login as 'ubuntu'
+cd aind2-cnn
+jupyter notebook --ip=0.0.0.0 --no-browser
+Go to the local machine's browswer and type::     http://54.200.83.115:8888/?token=698c23e6b69cff2a44896bd78e1ea6571974926367bce139
+
+============= MAKE SURE TO TERMINATE AWS INSTANCE AFTER USE BC 8HRS = ~ $1 =================
