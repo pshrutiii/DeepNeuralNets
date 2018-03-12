@@ -1,9 +1,22 @@
-IPv4 Public IP : 54.201.193.154 (<== value could change everytime you STOP and START your instance!)
+============ HOW TO SET UP AWS ====================
+	1. AWS > region: Oregon > Launch EC2 instance
+	2. AWS Marketplace > Search for 'Deep Learning AMI with Source Code (CUDA 8, Ubuntu)'
+	3. Filter by: GPU compute  type: 'p2.xlarge' (check for this permission using AWS_step1.pdf)
+	4. Review & Launch
+	5. Configure a Security Group 
+		> New
+		> Group name
+		> SSH - TCP - 22 - Custom - 0.0.0.0/0
+		> Custom TCP Rule - TCP - 8888 - Anywhere - 0.0.0.0/0
+		> Create NEW key-pair & download it
+	6. Launch the EC2 instance & save the IP
+
+IPv4 Public IP : 54.201.193.154 (IP varies each time your restart instance)
 
 ============= ACCESS THE SYSTEM FIRST TIME ===================
-1. Take the pem and convert to ppk (using puttygen)
-2. Open putty and add username (ec2-54-201-193-154.us-west-2.compute.amazonaws.com) and upload the ppk to login
-3. For user type "ubuntu"
+	1. Take the pem and convert to ppk (using puttygen)
+	2. Open putty and add username (ec2-54-201-193-154.us-west-2.compute.amazonaws.com) and upload the ppk to login
+	3. For user type "ubuntu"
 
 ============= CONFIGURE JUPYTER NOTEBOOK SETTINGS ==============
 jupyter notebook --generate-config
@@ -20,10 +33,11 @@ Copy/ paste the link that was outputted from previous command & replace 0.0.0.0 
 
 http://54.201.193.154:8888/?token=6c86eb77ca8db4382dd054fc5b0d68c018a6917349ae1b72
 
+
 ============= TO USE ON A DAY-TO-DAY BASIS ============
 Open putting and login to 'Udacity DL' & login as 'ubuntu'
 cd aind2-cnn
 jupyter notebook --ip=0.0.0.0 --no-browser
 Go to the local machine's browswer and type::     http://54.200.83.115:8888/?token=698c23e6b69cff2a44896bd78e1ea6571974926367bce139
 
-============= MAKE SURE TO TERMINATE AWS INSTANCE AFTER USE BC 8HRS = ~ $1 =================
+===== MAKE SURE TO TERMINATE AWS INSTANCE AFTER USE BC 8HRS = ~ $1 =====
