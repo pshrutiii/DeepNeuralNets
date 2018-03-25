@@ -1,3 +1,8 @@
 .ipynb_checkpoints
-.pem
-.ppk
+Capstone/train/
+Capstone/test/
+AWS-Cloud/
+*.csv
+*.jpg
+*.whl
+*.hdf5
