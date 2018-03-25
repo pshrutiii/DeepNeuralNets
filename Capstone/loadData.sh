@@ -1,5 +1,6 @@
 #!/bin/sh
  
+sudo python3 -m pip install --update pip
 sudo python3 -m pip install -r requirements.txt
 cd /home/ubuntu/.kaggle
 cat <<EOF >/home/ubuntu/.kaggle/kaggle.json

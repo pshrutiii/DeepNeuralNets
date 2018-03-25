@@ -28,7 +28,6 @@ cd DeepNeuralNets/Capstone
 chmod +x loadData.sh
 ./loadData.sh
 
-
 jupyter notebook --ip=0.0.0.0 --no-browser
 
 ============= ACCESS THE JUPYTER FROM YOUR LOCAL MACHINE ===========
