@@ -22,13 +22,13 @@ IPv4 Public IP : 54.201.193.154 (IP varies each time your restart instance)
 jupyter notebook --generate-config
 sed -ie "s/#c.NotebookApp.ip = 'localhost'/#c.NotebookApp.ip = '*'/g" ~/.jupyter/jupyter_notebook_config.py
 
-
 ============= LOAD YOUR FILES ===========
 git clone https://github.com/pshrutiii/DeepNeuralNets.git
 cd DeepNeuralNets/Capstone
-sudo python3 -m pip install -r requirements.txt
-chmod 600 ~/.kaggle/kaggle.json
-kaggle competitions download -c landmark-retrieval-challenge
+chmod +x loadData.sh
+./loadData.sh
+
+
 jupyter notebook --ip=0.0.0.0 --no-browser
 
 ============= ACCESS THE JUPYTER FROM YOUR LOCAL MACHINE ===========

@@ -6,3 +6,4 @@ AWS-Cloud/
 *.jpg
 *.whl
 *.hdf5
+*.json
